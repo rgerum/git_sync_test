@@ -10,10 +10,11 @@ def update_all():
 
 def schedule_daily_update():
     print('Started scheduler for daily update...')
-    schedule.every().minute.at("03", "America/New_York").do(update_all)
+    schedule.every().minute.at(":03").do(update_all)
 
     while True:
         try:
+            git.check_update()
             schedule.run_pending()
             time.sleep(1)
         except KeyboardInterrupt:
@@ -24,3 +25,5 @@ def schedule_daily_update():
             print(traceback.format_exc())
             print('Will sleep 1min.')
             time.sleep(60)
+
+schedule_daily_update()

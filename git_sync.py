@@ -7,7 +7,7 @@ class Git:
     def __init__(self):
         self.current_hash = get_current_commit_hash()
 
-    def check_commit(self):
+    def check_update(self):
         fetch()
         remote_commit = get_newest_commit_hash()
         if self.current_hash != remote_commit:
