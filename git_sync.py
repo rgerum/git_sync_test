@@ -11,6 +11,7 @@ class Git:
         fetch()
         remote_commit = get_newest_commit_hash()
         if self.current_hash != remote_commit:
+            print("hash", self.current_hash, remote_commit)
             self.current_hash = remote_commit
             update_to_head()
             restart_script()
