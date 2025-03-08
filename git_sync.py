@@ -55,4 +55,4 @@ def update_to_head():
     run_command("git checkout HEAD --force")  # Now pull the changes
     run_command("git pull origin {}".format(get_current_branch()))  # Now pull the changes
     #run_command("bun install")
-    #run_command("uv pip install")
+    run_command("uv pip install")
